@@ -23,7 +23,7 @@ $my-theme: mat-light-theme($my-theme-primary, $my-theme-accent, $my-theme-warn);
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($my-theme);
-@include theme-theme_components($my-theme);
+@include theme_components($my-theme);
 
 // Dark Theme
 $my-dark-theme-primary: mat-palette($mat-pink, 500, 200, 700);
@@ -32,5 +32,5 @@ $my-dark-theme: mat-dark-theme($my-dark-theme-primary, $my-dark-theme-accent);
 
 .dark-theme {
   @include angular-material-theme($my-dark-theme);
-  @include theme-theme_components($my-dark-theme);
+  @include theme_components($my-dark-theme);
 }

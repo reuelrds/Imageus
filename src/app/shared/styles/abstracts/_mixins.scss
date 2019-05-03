@@ -32,7 +32,7 @@
 }
   
 // Define a mixin that accepts a theme and outputs the theme-specific styles.
-@mixin theme-colors($theme) {
+@mixin theme_components($theme) {
     // Extract the palettes you need from the theme definition.
     $primary: map-get($theme, primary);
     $accent: map-get($theme, accent);
