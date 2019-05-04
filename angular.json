@@ -47,7 +47,7 @@
             ],
             "styles": [
               "src/app/shared/styles/base/my-theme.scss",
-              "src/assets/icon-fonts/icofont/icofont.min.css",
+              "src/assets/icofont/icofont.min.css",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -106,7 +106,7 @@
             "karmaConfig": "src/karma.conf.js",
             "styles": [
               "src/app/shared/styles/base/my-theme.scss",
-              "src/assets/icon-fonts/icofont/icofont.min.css",
+              "src/assets/icofont/icofont.min.css",
               "src/styles.scss"
             ],
             "scripts": [],
