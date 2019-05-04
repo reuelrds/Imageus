@@ -1,13 +1,15 @@
 <mat-toolbar class="navbar">
   <div class="navbar__icon">
-    wefwe
+    <img src="assets/logo-black.png" alt="Imageus Logo">
   </div>
   <div class="navbar__actions">
     <div class="navbar__actions--toggle-theme">
-      fewf
+        <imageus-theme-picker></imageus-theme-picker>
     </div>
     <div class="navbar__actions--cart">
-      fwer
+      <button mat-icon-button matTooltip="View Favourite Images">
+        <mat-icon [matBadge]="favImages"  [matBadgeHidden]="isFavImagesCountZero" matBadgeColor="accent" fontSet="icofont" fontIcon="icofont-bucket" class="navbar__actions--cart-icon"></mat-icon>
+      </button>
     </div>
   </div>
 </mat-toolbar>

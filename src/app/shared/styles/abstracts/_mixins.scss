@@ -1,3 +1,5 @@
+@import './../../../navbar/navbar-theme.component';
+
 @mixin respond($breakpoint) {
     @if $breakpoint == 'phone-m' {
       @media only screen and (max-width: 23.44em) {
@@ -30,7 +32,7 @@
       }
     }
 }
-  
+
 // Define a mixin that accepts a theme and outputs the theme-specific styles.
 @mixin theme_components($theme) {
     // Extract the palettes you need from the theme definition.
@@ -40,4 +42,6 @@
     $foreground: map-get($theme, foreground);
     $background: map-get($theme, background);
 
+
+    @include navbar-theme($theme);
 }
