@@ -46,3 +46,4 @@ testem.log
 Thumbs.db
 
 /scripts/test_data.json
+__pycache__/
