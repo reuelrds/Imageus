@@ -46,3 +46,4 @@ testem.log
 Thumbs.db
 
 /backend/database
+/scripts/test_data.json
