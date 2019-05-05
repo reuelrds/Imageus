@@ -45,5 +45,4 @@ testem.log
 .DS_Store
 Thumbs.db
 
-/backend/database
 /scripts/test_data.json
