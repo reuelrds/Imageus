@@ -5,10 +5,6 @@ import os
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
-print(__file__)
-print(BASE_DIR)
-# print(os.environ["DATABASE_URL"])
-
 class Config:
   """
     defins Database Config vars
