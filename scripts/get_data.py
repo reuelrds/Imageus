@@ -222,7 +222,12 @@ if __name__=="__main__":
 
   # Get DB path from user
   parser = argparse.ArgumentParser(
-    description="Fetches and Loads Photos from Unsplash into the Database"
+    description=
+      """
+      \rFetches and Loads Photos from Unsplash into the Database.
+      \rNote: Don't provide page and page_size if query matches any previous query
+      """,
+    formatter_class=argparse.RawTextHelpFormatter
   )
 
   parser.add_argument(
