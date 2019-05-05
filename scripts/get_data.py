@@ -5,6 +5,7 @@ import uniqid
 import sys
 import requests
 
+
 def connect_database(database_path):
   """
     Connect to Photos DB
@@ -218,7 +219,7 @@ def main(access_key, db_path, query, page, page_size):
     connection.close()
 
 
-if __name__=="__main__":
+if __name__== "__main__":
 
   # Get DB path from user
   parser = argparse.ArgumentParser(
