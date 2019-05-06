@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
 import * as Masonry from 'masonry-layout';
+import { MatDialog } from '@angular/material';
+import { ImageDetailsComponent } from '../image-details/image-details.component';
 
 @Component({
   selector: 'imageus-image',
@@ -9,7 +11,6 @@ import * as Masonry from 'masonry-layout';
 })
 export class ImageComponent implements OnInit, AfterViewInit {
 
-  constructor() { }
 
 
   @ViewChild('imageContainer') imageContainer: ElementRef;
@@ -32,6 +33,7 @@ export class ImageComponent implements OnInit, AfterViewInit {
   };
 
 
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
   }
@@ -47,7 +49,12 @@ export class ImageComponent implements OnInit, AfterViewInit {
   }
 
   showImage() {
-
+    this.dialog.open(ImageDetailsComponent, {
+      width: '80vw',
+      height: '90vh',
+      data: this.data,
+      autoFocus: false
+    });
   }
 
 }

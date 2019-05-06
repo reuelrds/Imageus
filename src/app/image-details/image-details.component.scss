@@ -1,0 +1,134 @@
+:host {
+  width: 100%;
+  height: 100%;
+}
+
+.image-details {
+
+  &__author {
+
+    display: flex;
+    align-items: center;
+
+    & > * {
+      display: inline-block;
+    }
+
+    &--image {
+      height: 6.4rem;
+      width: 6.4rem;
+      border-radius: 50%;
+      overflow: hidden;
+      shape-outside: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+      border: 1px solid #000;
+
+      & img {
+        width: 6.4rem;
+        height: 6.4rem;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    &--details {
+      margin-left: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      // font-weight: 300;
+      margin-right: auto;
+    }
+
+    &--name {
+      font-size: 2rem;
+    }
+
+    &--username {
+      font-size: 1.4rem;
+
+      & a {
+        text-decoration: none;
+        color: #666;
+        transition: color .2s ease-in-out;
+
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+  }
+}
+
+
+.image {
+  margin: 4rem 6rem;
+  max-height: 70vh;
+  padding: 0;
+  border-radius: 8px;
+
+  &-container {
+    width: 100%;
+    height: 100%;
+
+    &  img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+
+.image-box {
+  position: relative;
+
+  &__image {
+    filter: brightness(100%);
+    transition: filter .35s ease-in-out;
+
+    &:hover {
+      filter: brightness(50%);
+    }
+  }
+
+  &__caption {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    color: #fff;
+    border-right: 1px solid #fff;
+    text-align: right;
+    width: 20%;
+    transition: opacity 0.35s, transform 0.35s;
+    transform: translate3d(-40px,0,0);
+    padding: 1rem;
+    font-family: 'lato', sans-serif;
+    font-weight: 300;
+    opacity: 0;
+
+    &--desc {
+      font-size: 3rem;
+      margin-bottom: .5rem;
+      font-weight: 400;
+    }
+
+    &--alt {
+      font-size: 2.4rem;
+      font-weight: 300;
+    }
+
+  }
+
+  &:hover &__caption {
+    transform: translate3d(0,0,0);
+    opacity: 1;
+  }
+}
+
+
+.close {
+  margin-right: 2rem;
+  font-size: 2.6rem;
+  align-self: center;
+}
