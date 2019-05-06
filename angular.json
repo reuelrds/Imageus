@@ -50,7 +50,10 @@
               "src/assets/icofont/icofont.min.css",
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "./node_modules/imagesloaded/imagesloaded.pkgd.min.js",
+              "./node_modules/masonry-layout/dist/masonry.pkgd.min.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
