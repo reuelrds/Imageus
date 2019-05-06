@@ -48,6 +48,11 @@ url("./fonts/icofont.woff") format("woff");
   content: "\ed1b";
 }
 
+.icofont-heart:before
+{
+  content: "\ef45";
+}
+
 .icofont-xs
 {
   font-size: .5em;
