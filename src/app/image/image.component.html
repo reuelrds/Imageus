@@ -1,0 +1,25 @@
+<div class="box-container" #imageContainer>
+  <div class="box-sizer"></div>
+  <div class="box-gutter"></div>
+
+  <div class="box" (click)="showImage()">
+    <img class="box__image" [src]="data.regular">
+    <div class="box__author">
+      <div class="box__author--image">
+        <img [src]="data.profile_image" alt="">
+      </div>
+      <div class="box__author--details">
+        <div class="box__author--name">
+          {{ data.name }}
+        </div>
+        <div class="box__author--username">
+          <a [href]="data.link">@{{ data.username }}</a>
+        </div>
+      </div>
+    </div>
+    <div class="box__likes">
+      <i class="icofont-heart-alt box__likes--icon"></i>
+    </div>
+  </div>
+</div>
+
