@@ -1,13 +1,11 @@
 """
   Imageus
 
-  Flask REST Api Backend for Imageus Website
+  A Flask REST Api Backend for Imageus Website
 """
+from app import create_app
 
-import os
-from app import APP
-
-os.environ["DATABASE_URL"] = "./database/photos.db"
+APP = create_app()
 
 if __name__ == "__main__":
   APP.run()

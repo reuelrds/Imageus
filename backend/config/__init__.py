@@ -1,7 +1,7 @@
 """
-  Config
+  Config Package
 
-  Config class stores all static variables as it's attributes
+  Config stores all configuration variables as class attributes
 """
 
 from .config import Config

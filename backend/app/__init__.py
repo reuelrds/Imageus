@@ -5,12 +5,24 @@
 """
 
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
 
 from config import Config
+from .extensions import DB, MIGRATE
 
-APP = Flask(__name__)
-APP.config.from_object(Config)
-DB = SQLAlchemy(APP)
-MIGRATE = Migrate(APP, DB)
+
+def create_app(config_obj=Config):
+  """
+    Creates and Instantiates Flask app
+  """
+  app = Flask(__name__)
+  app.config.from_object(config_obj)
+  register_extensiions(app)
+  return app
+
+
+def register_extensiions(app):
+  """
+    Register Flask Extensions
+  """
+  DB.init_app(app)
+  MIGRATE.init_app(app)
