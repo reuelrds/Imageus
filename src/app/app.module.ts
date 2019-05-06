@@ -8,12 +8,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MaterialModule } from './shared/material.module';
 import { ThemePickerModule } from './theme-picker/theme-picker.component';
 import { HeroComponent } from './hero/hero.component';
+import { ImageComponent } from './image/image.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HeroComponent
+    HeroComponent,
+    ImageComponent
   ],
   imports: [
     BrowserModule,

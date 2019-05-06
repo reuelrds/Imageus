@@ -15,3 +15,8 @@
   background-size: cover;
   background-position: center;
 }
+
+.image_container {
+  grid-column: center-start / center-end;
+  margin: 10rem 0;
+}
