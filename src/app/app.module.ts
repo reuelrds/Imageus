@@ -10,6 +10,8 @@ import { ThemePickerModule } from './theme-picker/theme-picker.component';
 import { HeroComponent } from './hero/hero.component';
 import { ImageComponent } from './image/image.component';
 import { ImageDetailsComponent } from './image-details/image-details.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NgxMasonryModule } from 'ngx-masonry';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { ImageDetailsComponent } from './image-details/image-details.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     MaterialModule,
-    ThemePickerModule
+    ThemePickerModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
