@@ -93,6 +93,8 @@
     display: flex;
     padding: .5rem;
     border-radius: 4px;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
 
     & > * {
       margin: .1rem .5rem;
@@ -117,5 +119,9 @@
 
   &:hover &__image {
     filter: brightness(40%);
+  }
+
+  &:hover &__likes {
+    opacity: 1;
   }
 }
