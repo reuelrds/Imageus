@@ -9,9 +9,9 @@
     <div class="navbar__actions--toggle-theme">
         <imageus-theme-picker></imageus-theme-picker>
     </div>
-    <div class="navbar__actions--cart">
+    <div class="navbar__actions--cart" (click)="openFavouritesDialog()">
       <button mat-icon-button matTooltip="View Favourite Images">
-        <mat-icon [matBadge]="favImages"  [matBadgeHidden]="isFavImagesCountZero" matBadgeColor="accent" fontSet="icofont" fontIcon="icofont-bucket" class="navbar__actions--cart-icon"></mat-icon>
+        <mat-icon [matBadge]="favImagesCount"  [matBadgeHidden]="isFavImagesCountZero" matBadgeColor="accent" fontSet="icofont" fontIcon="icofont-bucket" class="navbar__actions--cart-icon"></mat-icon>
       </button>
     </div>
   </div>

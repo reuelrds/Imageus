@@ -13,6 +13,7 @@ import { ImageDetailsComponent } from './image-details/image-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './search/search.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FavouritesDialogComponent } from './favourites-dialog/favourites-dialog.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeroComponent,
     ImageComponent,
     ImageDetailsComponent,
-    SearchComponent
+    SearchComponent,
+    FavouritesDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [
-    ImageDetailsComponent
+    ImageDetailsComponent,
+    FavouritesDialogComponent
   ]
 })
 export class AppModule { }

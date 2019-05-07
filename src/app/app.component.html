@@ -1,6 +1,6 @@
 <div class="container">
   <div class="container hero-box">
-    <imageus-navbar class="navbar" [favImages]="favImagesCount"></imageus-navbar>
+    <imageus-navbar class="navbar" [favImagesCount]="favImagesCount" [favImages]="likedImages"></imageus-navbar>
     <imageus-hero class="hero-component" (heroSearchQuery)="searchQuery($event)"></imageus-hero>
   </div>
   <imageus-image class="image_container" [images]="filteredImages" (likedImage)="liked($event)"></imageus-image>
