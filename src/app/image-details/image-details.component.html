@@ -18,17 +18,13 @@
   </div>
 
   <div class="image-container">
-    <mat-dialog-content class="image">
-      <figure class="image-box">
-        <img [src]="data.regular" alt="" class="image-box__image">
-        <figcaption class="image-box__caption">
-          <p class="image-box__caption--desc" *ngIf="data.description !== 'None'">{{ data.description }}</p>
-          <p class="image-box__caption--alt" *ngIf="data.alt_description !== 'None'">{{ data.alt_description }}</p>
-        </figcaption>
-      </figure>
-    </mat-dialog-content>
+    <figure class="image-box">
+      <img [src]="data.regular" alt="" class="image-box__image">
+      <!-- dswwd -->
+      <figcaption class="image-box__caption">
+        <p class="image-box__caption--desc" *ngIf="data.description !== 'None'">{{ data.description }}</p>
+        <p class="image-box__caption--alt" *ngIf="data.alt_description !== 'None'">{{ data.alt_description }}</p>
+      </figcaption>
+    </figure>
   </div>
-  <!-- <div class="image">
-      <img [src]="data.regular" alt="">
-  </div> -->
 </div>

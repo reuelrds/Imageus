@@ -5,6 +5,9 @@
 
 .image-details {
 
+  width: 100%;
+  height: 100%;
+
   &__author {
 
     display: flex;
@@ -63,27 +66,25 @@
 
 
 .image {
-  margin: 4rem 6rem;
-  max-height: 70vh;
-  padding: 0;
-  border-radius: 8px;
 
   &-container {
     width: 100%;
-    height: 100%;
-
-    &  img {
-      width: 100%;
-      height: auto;
-    }
+    height: calc(100% - 6.4rem);
+    position: relative;
   }
 }
 
 
 .image-box {
-  position: relative;
+  display: inline-block;
+  position: absolute;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
 
   &__image {
+    height: 100%;
+    border-radius: 5px;
     filter: brightness(100%);
     transition: filter .35s ease-in-out;
 
@@ -99,7 +100,7 @@
     color: #fff;
     border-right: 1px solid #fff;
     text-align: right;
-    width: 20%;
+    width: 40%;
     transition: opacity 0.35s, transform 0.35s;
     transform: translate3d(-40px,0,0);
     padding: 1rem;
@@ -111,11 +112,13 @@
       font-size: 3rem;
       margin-bottom: .5rem;
       font-weight: 400;
+      text-transform: capitalize;
     }
 
     &--alt {
       font-size: 2.4rem;
       font-weight: 300;
+      text-transform: capitalize;
     }
 
   }
