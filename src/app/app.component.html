@@ -1,8 +1,8 @@
 <div class="container">
   <div class="container hero-box">
     <imageus-navbar class="navbar" [favImages]="favImagesCount"></imageus-navbar>
-    <imageus-hero class="hero-component"></imageus-hero>
+    <imageus-hero class="hero-component" (heroSearchQuery)="searchQuery($event)"></imageus-hero>
   </div>
-  <imageus-image class="image_container"></imageus-image>
+  <imageus-image class="image_container" [images]="filteredImages"></imageus-image>
 </div>
 

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { query } from '@angular/animations';
 
 @Component({
   selector: 'imageus-hero',
@@ -10,6 +11,8 @@ export class HeroComponent implements OnInit {
 
   searchBox: FormControl;
 
+  @Output() heroSearchQuery = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
@@ -17,7 +20,7 @@ export class HeroComponent implements OnInit {
   }
 
   searchPhotos() {
-    console.log(this.searchBox.value);
+    this.heroSearchQuery.emit(this.searchBox.value);
 
   }
 
