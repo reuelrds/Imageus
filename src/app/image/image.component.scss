@@ -3,6 +3,9 @@
   width: 30%;
   position: relative;
   margin-bottom: 2rem;
+  opacity: 0;
+  // visibility: hidden;
+  transition: opacity .5s ease-in-out;
 
   font-family: 'lato', sans-serif;
 
