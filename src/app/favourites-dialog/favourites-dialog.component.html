@@ -1,3 +1,17 @@
-<p>
-  favourites-dialog works!
-</p>
+<div class="favourites">
+  <mat-toolbar class="favourites__title">
+    <div class="favourites__title--text">Favourite Images</div>
+    <mat-icon class="favourites__title--close" fontSet="icofont" fontIcon="icofont-close-line" mat-dialog-close></mat-icon>
+  </mat-toolbar>
+  <mat-dialog-content class="favourites__table">de</mat-dialog-content>
+  <mat-dialog-actions class="favourites__actions">
+    <mat-form-field class="favourites__actions--wrapper">
+      <mat-icon matPrefix class="favourites__actions--icon">email</mat-icon>
+      <input matInput type="text" [formControl]="email" name="email" placeholder="E-mail Address" class="favourites__actions--email">
+      <mat-hint>Send an E-mail containing your Favourite Images</mat-hint>
+    </mat-form-field>
+    <div class="favourites__actions--send" (click)="sendEmail()">
+        <mat-icon matPrefix class="favourites__actions--send-icon">send</mat-icon>
+    </div>
+  </mat-dialog-actions>
+</div>

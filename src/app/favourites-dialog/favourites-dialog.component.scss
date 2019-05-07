@@ -1,0 +1,44 @@
+.favourites {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__title {
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__table {
+    flex-grow: 1;
+  }
+
+  &__actions {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3rem;
+
+
+    &--wrapper {
+      width: 33%;
+      margin-right: 2rem;
+    }
+
+    &--icon {
+      margin-right: 1rem;
+      font-size: 2rem;
+      transform: translateY(20%);
+    }
+
+    &--email {
+      width: 50%;
+    }
+
+    &--send {
+      cursor: pointer;
+    }
+  }
+}
