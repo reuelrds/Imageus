@@ -12,6 +12,7 @@ import { ImageComponent } from './image/image.component';
 import { ImageDetailsComponent } from './image-details/image-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxMasonryModule } from 'ngx-masonry';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NgxMasonryModule } from 'ngx-masonry';
     NavbarComponent,
     HeroComponent,
     ImageComponent,
-    ImageDetailsComponent
+    ImageDetailsComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
