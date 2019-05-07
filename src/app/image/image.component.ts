@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, ViewChildren, QueryList, Input, OnChanges } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, ViewChildren, QueryList, Input } from '@angular/core';
 
 import * as Packery from 'packery';
 import * as imagesLoaded from 'imagesloaded';
@@ -13,7 +13,7 @@ import { Image } from '../models/image';
   templateUrl: './image.component.html',
   styleUrls: ['./image.component.scss']
 })
-export class ImageComponent implements OnInit, AfterViewInit, OnChanges {
+export class ImageComponent implements AfterViewInit {
 
 
 
@@ -39,18 +39,6 @@ export class ImageComponent implements OnInit, AfterViewInit, OnChanges {
   };
 
   constructor(private dialog: MatDialog, private imageService: ImageService) { }
-
-  ngOnInit() {
-
-  }
-
-  ngOnChanges() {
-    if (this.images){
-      console.log(this.images.length);
-      // this.mas.layout();
-      // this.mas.reloadItems();
-    }
-  }
 
   ngAfterViewInit() {
     this.ele.changes.subscribe(res => {
