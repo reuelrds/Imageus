@@ -2,8 +2,8 @@
   <div class="box-sizer"></div>
   <div class="box-gutter"></div>
 
-  <div class="box" (click)="showImage(image)" [attr.data-idx]="i" *ngFor="let image of images; index as i" #ele>
-    <img class="box__image" [src]="image.regular">
+  <div class="box" [attr.data-idx]="i" *ngFor="let image of images; index as i" #ele>
+    <img class="box__image" [src]="image.regular" (click)="showImage(ele)">
     <div class="box__author">
       <div class="box__author--image">
         <img [src]="image.profile_image" alt="">
