@@ -107,10 +107,11 @@
       -webkit-text-fill-color: transparent;
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: #fff;
+      transition: -webkit-text-stroke-color .2s ease-in-out;
 
       &:hover {
-        -webkit-text-fill-color: rgba(#f00, .7);
-        -webkit-text-stroke-color: rgba($color: #f00, $alpha: .9);
+        -webkit-text-fill-color: rgba(#ff8a8a, 1);
+        -webkit-text-stroke-color: rgba($color: #ff8a8a, $alpha: .9);
       }
     }
 

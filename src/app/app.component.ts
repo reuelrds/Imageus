@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
 
   favImagesCount = 0;
   images: Image[];
+  likedImages: Image[] = [];
   filteredImages: Image[];
 
   constructor(
@@ -44,5 +45,18 @@ export class AppComponent implements OnInit {
     });
     console.log(this.filteredImages);
     console.log(this.filteredImages.length);
+  }
+
+  liked(likedImage) {
+    const result = this.likedImages.some(image => image.photo_id === likedImage.photo_id);
+
+    if (!result) {
+      this.likedImages.push(likedImage);
+      this.favImagesCount += 1;
+    } else {
+      this.likedImages = this.likedImages.filter(image => image.photo_id !== likedImage.photo_id);
+      this.favImagesCount -= 1;
+    }
+    console.log(this.likedImages, this.favImagesCount);
   }
 }

@@ -16,8 +16,8 @@
         </div>
       </div>
     </div>
-    <div class="box__likes">
-      <i class="icofont-heart-alt box__likes--icon"></i>
+    <div class="box__likes" (click)="onLike(i, icon.style)">
+      <i class="icofont-heart-alt box__likes--icon" #icon></i>
     </div>
   </div>
 </div>

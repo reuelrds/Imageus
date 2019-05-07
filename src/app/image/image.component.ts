@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, AfterViewInit, ViewChildren, QueryList, Input } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, ViewChildren, QueryList, Input, Output, EventEmitter } from '@angular/core';
 
 import * as Packery from 'packery';
 import * as imagesLoaded from 'imagesloaded';
@@ -21,6 +21,7 @@ export class ImageComponent implements AfterViewInit {
   @ViewChildren('ele') ele: QueryList<ElementRef>;
 
   @Input() images: Image[] = [];
+  @Output() likedImage = new EventEmitter();
 
   // images: Image[];
   mas;
@@ -60,6 +61,16 @@ export class ImageComponent implements AfterViewInit {
       data: this.images[idx],
       autoFocus: false
     });
+  }
+
+  onLike(index, iconStyle) {
+    iconStyle.webkitTextFillColor = '#f00';
+    iconStyle.webkitTextStrokeColor = '#f00';
+
+    console.log(this.images[index].photo_id);
+    const imageDetails = this.images[index];
+
+    this.likedImage.emit(imageDetails);
   }
 
 }
