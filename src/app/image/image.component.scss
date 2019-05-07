@@ -113,6 +113,12 @@
         -webkit-text-fill-color: rgba(#ff8a8a, 1);
         -webkit-text-stroke-color: rgba($color: #ff8a8a, $alpha: .9);
       }
+
+      &-liked {
+        -webkit-text-fill-color: #f00;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #f00;
+      }
     }
 
   }

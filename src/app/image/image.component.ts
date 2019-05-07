@@ -27,6 +27,7 @@ export class ImageComponent implements AfterViewInit {
   mas;
   imLoad;
   prevLoadedItems = [];
+  liked = false;
 
   masOpt =  {
     itemSelector: '.box',
@@ -64,8 +65,8 @@ export class ImageComponent implements AfterViewInit {
   }
 
   onLike(index, iconStyle) {
-    iconStyle.webkitTextFillColor = '#f00';
-    iconStyle.webkitTextStrokeColor = '#f00';
+
+    this.liked = !this.liked;
 
     console.log(this.images[index].photo_id);
     const imageDetails = this.images[index];
