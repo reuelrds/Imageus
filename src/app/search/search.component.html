@@ -6,8 +6,8 @@
   <input
     matInput
     class="search__box--input"
-    [(value)]=searchBox
-    (keyup)="searchUsers()"
+    [formControl]="searchBox"
+    (keyup)="searchPhoto()"
   />
   <mat-hint>Search</mat-hint>
 </mat-form-field>

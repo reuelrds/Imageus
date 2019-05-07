@@ -14,7 +14,7 @@
     <div class="hero__searchbox">
       <mat-form-field appearance="standard" floatLabel="never" class="hero__searchbox--input">
         <mat-icon matPrefix fontSet="icofont" fontIcon="icofont-search" class="hero__searchbox--input-icon"></mat-icon>
-        <input matInput type="text" name="searchbox" placeholder="Search Landscapes or Nature">
+        <input matInput type="text" name="searchbox" placeholder="Search Landscapes or Nature" [formControl]="searchBox" (keyup)="searchPhotos()">
       </mat-form-field>
     </div>
   </div>
