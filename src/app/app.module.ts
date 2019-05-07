@@ -11,7 +11,6 @@ import { HeroComponent } from './hero/hero.component';
 import { ImageComponent } from './image/image.component';
 import { ImageDetailsComponent } from './image-details/image-details.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NgxMasonryModule } from 'ngx-masonry';
 import { SearchComponent } from './search/search.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
