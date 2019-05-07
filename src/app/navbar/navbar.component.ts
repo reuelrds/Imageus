@@ -32,7 +32,8 @@ export class NavbarComponent implements OnInit, OnChanges {
     this.dialog.open(FavouritesDialogComponent, {
       width: '80vw',
       height: '80vh',
-      data: this.favImages
+      data: this.favImages,
+      autoFocus: false
     });
   }
 }
