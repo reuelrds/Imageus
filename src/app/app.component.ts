@@ -30,11 +30,17 @@ export class AppComponent implements OnInit {
     });
   }
 
-  searchQuery(event) {
-    console.log(event);
+  searchQuery(query) {
+    console.log(query);
     this.filteredImages = this.images.filter(image => {
-      const str = Object.values(image).join(',');
-      return str.includes(event);
+      const str = String.prototype.concat(
+        image.description,
+        image.alt_description,
+        image.tags,
+        image.username,
+        image.name
+      );
+      return str.includes(query);
     });
     console.log(this.filteredImages);
     console.log(this.filteredImages.length);
