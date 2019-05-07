@@ -3,6 +3,7 @@
 """
 
 from flask import jsonify
+from random import shuffle
 
 from app.models import Photo, Url, User
 from . import BLUEPRINT as bp
@@ -43,4 +44,5 @@ def test():
     del photo['Photo']
     result.append(photo)
 
+  shuffle(result)
   return jsonify(result)
