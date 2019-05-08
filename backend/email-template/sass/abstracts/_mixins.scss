@@ -29,14 +29,10 @@ $breakpoint arguement choices:
 }
 
 // $color : (#264556, #524548);
-@mixin linear-gradient($direction, $gradients-colorset-name) {
+@mixin linear-gradient($angle, $gradients-colorset-name) {
 
-  /* fallback for old browsers */
-  background: nth($gradients-colorset-name, 1);
-
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(to $direction, $gradients-colorset-name);
+  background: -webkit-linear-gradient($angle, $gradients-colorset-name);
 
    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(to $direction, $gradients-colorset-name);
+  background: linear-gradient($angle, $gradients-colorset-name);
  }
