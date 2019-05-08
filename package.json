@@ -7,7 +7,16 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "watch:sass": "node-sass ./backend/email-template/sass/main.scss ./backend/email-template/css/style.css -w",
+    "devserver": "live-server",
+    "start:email-template": "npm-run-all --parallel devserver watch:sass",
+
+    "compile:sass": "node-sass ./backend/email-template/sass/main.scss ./backend/email-template/dist/css/style.comp.css",
+    "concat:css": "concat -o ./backend/email-template/dist/css/style.concat.css ./backend/email-template/assets/icofont/icon-font.css ./backend/email-template/dist/css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' ./backend/email-template/dist/css/style.concat.css -o ./backend/email-template/dist/css/style.prefix.css",
+    "compress:css": "node-sass ./backend/email-template/dist/css/style.prefix.css ./backend/email-template/dist/css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass concat:css prefix:css compress:css"
   },
   "private": true,
   "dependencies": {
@@ -21,11 +30,16 @@
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
+    "autoprefixer": "^9.5.1",
+    "concat": "^1.0.3",
     "core-js": "^2.5.4",
     "hammerjs": "^2.0.8",
     "imagesloaded": "^4.1.4",
     "masonry-layout": "^4.2.2",
+    "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
     "packery": "^2.1.2",
+    "postcss-cli": "^6.1.2",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
