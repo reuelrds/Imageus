@@ -1,0 +1,11 @@
+.header {
+  margin-top: 2rem;
+  grid-column: center-start / center-end;
+  display: flex;
+  align-items: center;
+
+  &__logo {
+    height: 9.4rem;
+  }
+}
+

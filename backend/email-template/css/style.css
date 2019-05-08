@@ -1,0 +1,102 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where normal styles apply
+1800px + :      Big desktop
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+*/
+/* fallback for old browsers */
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+
+body {
+  box-sizing: border-box;
+  padding: 3rem; }
+  @media only screen and (max-width: 56.25em) {
+    body {
+      padding: 1rem; } }
+
+.container {
+  display: grid;
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 16.25rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
+  @media only screen and (max-width: 37.5em) {
+    .container {
+      grid-template-columns: [full-start] minmax(1rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 8rem) [col-end]) [center-end] minmax(1rem, 1fr) [full-end]; } }
+
+.box {
+  background: -webkit-linear-gradient(135deg, #2ebf91, #8360c3);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(135deg, #2ebf91, #8360c3);
+  padding: 2rem;
+  grid-column: full-start / full-end; }
+  .box-alt {
+    display: block;
+    border-radius: 4px;
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+    background-color: #fff; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400; }
+
+.heading-primary {
+  backface-visibility: hidden; }
+  .heading-primary--main {
+    display: block;
+    font-size: 2.4rem;
+    font-weight: 400;
+    text-transform: uppercase; }
+    @media only screen and (max-width: 37.5em) {
+      .heading-primary--main {
+        font-size: 1.6rem; } }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #999; }
+    @media only screen and (max-width: 37.5em) {
+      .heading-primary--sub {
+        font-size: 1.2rem; } }
+
+.header {
+  margin-top: 2rem;
+  grid-column: center-start / center-end;
+  display: flex;
+  align-items: center; }
+  .header__logo {
+    height: 9.4rem; }
+
+.separator {
+  grid-column: full-start / full-end; }
+  .separator__line {
+    width: 100%;
+    color: #999;
+    margin: 1rem auto;
+    display: block;
+    height: 1px;
+    border: none;
+    background-image: radial-gradient(circle, #999, transparent); }

@@ -1,0 +1,14 @@
+.separator {
+  grid-column: full-start / full-end;
+
+  &__line {
+    width: 100%;
+    color: $color-grey-dark-2;
+    margin: 1rem auto;
+    display: block;
+    height: 1px;
+    border:none;
+
+    background-image: radial-gradient(circle, $color-grey-dark-2, transparent);
+  }
+}

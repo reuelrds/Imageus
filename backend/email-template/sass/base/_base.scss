@@ -2,33 +2,58 @@
 *,
 *::after,
 *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
 html {
-    // This defines what 1rem is
-    font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+  // This defines what 1rem is
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
 
-    @include respond(tab-land) { // width < 1200?
-        font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
-    }
+  @include respond(tab-land) { // width < 1200?
+      font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+  }
 
-    @include respond(tab-port) { // width < 900?
-        font-size: 50%; //1 rem = 8px, 8/16 = 50%
-    }
+  @include respond(tab-port) { // width < 900?
+      font-size: 50%; //1 rem = 8px, 8/16 = 50%
+  }
 
-    @include respond(big-desktop) {
-        font-size: 75%; //1rem = 12, 12/16
-    }
+  @include respond(big-desktop) {
+      font-size: 75%; //1rem = 12, 12/16
+  }
 }
 
 body {
-    box-sizing: border-box;
-    padding: 3rem;
+  box-sizing: border-box;
+  padding: 3rem;
 
-    @include respond(tab-port) {
-        padding: 1rem;
-    }
+  @include respond(tab-port) {
+      padding: 1rem;
+  }
+}
+
+
+.container {
+  display: grid;
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 16.25rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+
+  @include respond(phone){
+    grid-template-columns: [full-start] minmax(1rem,1fr) [center-start]repeat(8, [col-start] minmax(min-content, 8rem) [col-end]) [center-end] minmax(1rem, 1fr) [full-end];
+  }
+}
+
+.box {
+  @include linear-gradient(135deg, $gradient-colors);
+  // display: block;
+  padding: 2rem;
+  grid-column: full-start / full-end;
+
+  &-alt {
+    display: block;
+    border-radius: 4px;
+    box-shadow: 5px 5px 15px 5px rgba($color: $color-black, $alpha: .5);
+    background-color: $color-white;
+
+  }
 }
