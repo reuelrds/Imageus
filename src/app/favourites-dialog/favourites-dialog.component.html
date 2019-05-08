@@ -11,11 +11,12 @@
   <mat-dialog-actions class="favourites__actions">
     <mat-form-field class="favourites__actions--wrapper">
       <mat-icon matPrefix class="favourites__actions--icon">email</mat-icon>
-      <input matInput type="text" [formControl]="email" name="email" placeholder="E-mail Address" class="favourites__actions--email">
+      <input matInput type="text" [formControl]="email" #inpem name="email" placeholder="E-mail Address" class="favourites__actions--email">
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
       <mat-hint>Send an E-mail containing your Favourite Images</mat-hint>
     </mat-form-field>
-    <div class="favourites__actions--send" (click)="sendEmail()">
-        <mat-icon matPrefix class="favourites__actions--send-icon">send</mat-icon>
-    </div>
+    <button mat-icon-button class="favourites__actions--send" form=inpem (click)="sendEmail()">
+        <mat-icon class="favourites__actions--send-icon">send</mat-icon>
+    </button>
   </mat-dialog-actions>
 </div>

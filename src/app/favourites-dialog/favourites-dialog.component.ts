@@ -20,11 +20,12 @@ export class FavouritesDialogComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.email = new FormControl('', Validators.email);
+    this.email = new FormControl('', [Validators.email, Validators.required]);
     console.log(this.data);
   }
 
   sendEmail() {
+    this.email.markAsTouched();
     if (this.email.valid && this.selectedImages.length > 0 ){
       const ids = this.selectedImages.map((image: Image) => {
         return image.photo_id;
@@ -39,5 +40,11 @@ export class FavouritesDialogComponent implements OnInit {
 
   setSelectedImages(images: Image[]) {
     this.selectedImages = images;
+  }
+
+  getErrorMessage() {
+    return this.email.hasError('required') ? 'You must enter a value' :
+        this.email.hasError('email') ? 'Not a valid email' :
+            '';
   }
 }
