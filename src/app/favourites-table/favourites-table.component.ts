@@ -31,6 +31,7 @@ export class FavouritesTableComponent implements AfterViewInit, OnInit {
     this.selection = new SelectionModel<Image>(allowMultiSelect, initialSelection);
   }
   ngAfterViewInit() {
+    this.selection.clear();
   }
 
   /** Whether the number of selected elements matches the total number of rows. */
@@ -50,8 +51,8 @@ export class FavouritesTableComponent implements AfterViewInit, OnInit {
     this.selectedImages.emit(this.selection.selected);
   }
 
-  selectImage(row: Image) {
-    console.log(this.selection);
+  selectImage(row) {
+    this.selection.select(row);
     this.selectedImages.emit(this.selection.selected);
   }
 }

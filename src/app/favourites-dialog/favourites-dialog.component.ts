@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
 import { Image } from '../models/image';
 import { FormControl, Validators } from '@angular/forms';
+import { ImageService } from '../services/image.service';
 
 @Component({
   selector: 'imageus-favourites-dialog',
@@ -11,10 +12,11 @@ import { FormControl, Validators } from '@angular/forms';
 export class FavouritesDialogComponent implements OnInit {
 
   email: FormControl;
-  selectedImages: Image[];
+  selectedImages: Image[] = [];
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: Image[]
+    @Inject(MAT_DIALOG_DATA) public data: Image[],
+    private imageService: ImageService
   ) { }
 
   ngOnInit() {
@@ -23,9 +25,11 @@ export class FavouritesDialogComponent implements OnInit {
   }
 
   sendEmail() {
-    console.log(this.email.value);
     if (this.email.valid && this.selectedImages.length > 0 ){
-      console.log('fe');
+      const ids = this.selectedImages.map((image: Image) => {
+        return image.photo_id;
+      });
+      this.imageService.sendEmail(ids);
     } else if (this.email.invalid) {
       console.log('Invalid Email');
     } else if (this.selectedImages.length === 0 ) {

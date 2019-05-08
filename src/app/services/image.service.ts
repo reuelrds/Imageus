@@ -24,4 +24,9 @@ export class ImageService {
       })
     );
   }
+
+  sendEmail(selectedImages: string[]) {
+    console.log(selectedImages);
+    this.httpClient.post('http://localhost:3000/api/photos', selectedImages);
+  }
 }
