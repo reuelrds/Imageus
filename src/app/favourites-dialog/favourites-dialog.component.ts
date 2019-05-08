@@ -11,6 +11,7 @@ import { FormControl, Validators } from '@angular/forms';
 export class FavouritesDialogComponent implements OnInit {
 
   email: FormControl;
+  selectedImages: Image[];
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: Image[]
@@ -23,6 +24,16 @@ export class FavouritesDialogComponent implements OnInit {
 
   sendEmail() {
     console.log(this.email.value);
+    if (this.email.valid && this.selectedImages.length > 0 ){
+      console.log('fe');
+    } else if (this.email.invalid) {
+      console.log('Invalid Email');
+    } else if (this.selectedImages.length === 0 ) {
+      console.log('No Images are Selected. Please select some Images before E-mailing');
+    }
   }
 
+  setSelectedImages(images: Image[]) {
+    this.selectedImages = images;
+  }
 }
