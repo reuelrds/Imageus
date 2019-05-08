@@ -13,4 +13,5 @@ export interface Image {
   tags: string;
   thumb: string;
   username: string;
+  liked?: boolean;
 }

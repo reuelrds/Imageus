@@ -64,10 +64,9 @@ export class ImageComponent implements AfterViewInit {
     });
   }
 
-  onLike(index, iconStyle) {
+  onLike(index) {
 
-    this.liked = !this.liked;
-
+    this.images[index].liked = !this.images[index].liked;
     console.log(this.images[index].photo_id);
     const imageDetails = this.images[index];
 
