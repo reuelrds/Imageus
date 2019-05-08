@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './search/search.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FavouritesDialogComponent } from './favourites-dialog/favourites-dialog.component';
+import { FavouritesTableComponent } from './favourites-table/favourites-table.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FavouritesDialogComponent } from './favourites-dialog/favourites-dialog
     ImageComponent,
     ImageDetailsComponent,
     SearchComponent,
-    FavouritesDialogComponent
+    FavouritesDialogComponent,
+    FavouritesTableComponent
   ],
   imports: [
     BrowserModule,

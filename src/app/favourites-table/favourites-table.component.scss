@@ -1,0 +1,17 @@
+.full-width-table {
+  width: 100%;
+}
+
+
+.table {
+
+  &__image {
+    margin: 1rem 0;
+    height: 6.4rem;
+    width: auto;
+  }
+}
+
+.mat-column-select {
+  overflow: initial;
+}
