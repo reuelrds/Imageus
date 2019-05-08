@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "watch:sass": "node-sass ./backend/email-template/sass/main.scss ./backend/email-template/css/style.css -w",
-    "devserver": "live-server",
+    "devserver": "live-server --open=./backend/email-template",
     "start:email-template": "npm-run-all --parallel devserver watch:sass",
 
     "compile:sass": "node-sass ./backend/email-template/sass/main.scss ./backend/email-template/dist/css/style.comp.css",
