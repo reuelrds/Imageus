@@ -45,13 +45,13 @@ body {
 
 .box {
   @include linear-gradient(135deg, $gradient-colors);
-  // display: block;
   padding: 4rem;
   grid-column: full-start / full-end;
+  border-radius: 3px;
 
   &-alt {
     display: block;
-    border-radius: 4px;
+    border-radius: 3px;
     box-shadow: 5px 5px 15px 5px rgba($color: $color-black, $alpha: .5);
     background-color: $color-white;
 
