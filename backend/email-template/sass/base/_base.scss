@@ -46,7 +46,7 @@ body {
 .box {
   @include linear-gradient(135deg, $gradient-colors);
   // display: block;
-  padding: 2rem;
+  padding: 4rem;
   grid-column: full-start / full-end;
 
   &-alt {
