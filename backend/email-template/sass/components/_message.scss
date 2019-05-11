@@ -1,7 +1,8 @@
 .message {
 
   margin: 3rem;
-  width: 50%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
 
   &-section {
     grid-column: center-start / center-end;
