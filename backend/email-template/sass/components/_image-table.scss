@@ -59,6 +59,11 @@
         grid-template-rows: repeat(4, 1fr);
         grid-gap: .5rem;
       }
+
+      @include respond(medium-phone) {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: minmax(0, 5fr) repeat(4, 1fr);
+      }
     }
 
     &--cell {
@@ -73,6 +78,12 @@
           grid-column: 1 / 2;
           grid-row: 1 / -1;
           place-self: stretch;
+        }
+
+        @include respond(medium-phone) {
+          grid-column: 1 / -1;
+          grid-row: 1 / 2;
+          place-self: center;
         }
 
         & img {
