@@ -4,8 +4,19 @@
   display: flex;
   align-items: center;
 
+  @include respond(big-phone) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    align-items: center;
+
+    &__text-box .heading-primary > * {
+      text-align: center;
+    }
+  }
+
   &__logo {
-    height: 9.4rem;
+    height: 13.5rem;
   }
 }
 

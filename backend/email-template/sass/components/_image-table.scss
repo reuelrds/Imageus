@@ -19,6 +19,7 @@
     list-style-type: none;
     display: grid;
     grid-template-columns: repeat(4, 2fr) 1fr;
+    grid-auto-rows: 10rem;
     grid-gap: 2rem;
     justify-items: left;
     align-items: center;
@@ -52,27 +53,63 @@
     grid-template-columns: minmax(0, 1fr);
     grid-gap: 2rem;
 
+    @include respond(phone) {
+      grid-gap: 5rem;
+    }
+
     &-row {
 
       @include respond(phone) {
         grid-template-columns: repeat(2, 2fr);
-        grid-template-rows: repeat(4, 1fr);
-        grid-gap: .5rem;
+        grid-template-rows: repeat(4, minmax(0, 4rem));
+        grid-gap: 1rem;
+      }
+
+      @include respond(big-phone) {
+        grid-template-columns: repeat(2, 2fr);
+        grid-template-rows: repeat(4, minmax(0, 6rem));
+        grid-gap: 1rem;
       }
 
       @include respond(medium-phone) {
         grid-template-columns: minmax(0, 1fr);
-        grid-template-rows: minmax(0, 5fr) repeat(4, 1fr);
+        grid-template-rows: minmax(1rem, 20rem) repeat(4, minmax(1rem, 1fr));
       }
     }
 
     &--cell {
 
       text-transform: capitalize;
+      margin-bottom: 0 !important;
+      line-height: 1.5;
+
+      @include respond(phone) {
+
+        &:nth-child(2)::before {
+          content: "Description: ";
+          font-weight: bold;
+        }
+        &:nth-child(3)::before {
+          content: "Alt Description: ";
+          font-weight: bold;
+        }
+        &:nth-child(4)::before {
+          content: "Image Credits: ";
+          font-weight: bold;
+        }
+        &:nth-child(5)::before {
+          content: "Download: ";
+          font-weight: bold;
+        }
+      }
+
+      @include respond(big-phone) {
+        line-height: 1.2;
+      }
 
       &-img {
-        position: relative;
         width: 100%;
+        height: 100%;
 
         @include respond(phone) {
           grid-column: 1 / 2;
@@ -87,10 +124,10 @@
         }
 
         & img {
-          height: 6.4rem;
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
           display: block;
-          margin: 0 auto;
-          width: auto;
         }
       }
 
@@ -100,7 +137,7 @@
         & i {
 
           @include respond(phone) {
-            font-size: 1rem;
+            font-size: 2.42857rem;
           }
         }
 
