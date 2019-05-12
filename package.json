@@ -8,16 +8,18 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "compile:sass-dev": "node-sass ./backend/email-template/sass/main.scss ./backend/email-template/css/style.css",
+
+    "compile:sass-dev": "node-sass ./email-template/sass/main.scss ./email-template/css/style.css",
     "watch:sass": "nodemon -e scss -x \"npm run compile:sass-dev\"",
-    "devserver": "live-server --open=./backend/email-template",
+    "devserver": "live-server --open=./email-template",
     "start:email-template": "npm-run-all --parallel devserver watch:sass",
 
-    "compile:sass": "node-sass ./backend/email-template/sass/main.scss ./backend/email-template/dist/css/style.comp.css",
-    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' ./backend/email-template/dist/css/style.comp.css -o ./backend/email-template/dist/css/style.prefix.css",
-    "compress:css": "node-sass ./backend/email-template/dist/css/style.prefix.css ./backend/email-template/dist/css/style.css --output-style compressed",
+    "compile:sass": "node-sass ./email-template/sass/main.scss ./email-template/dist/css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' ./email-template/dist/css/style.comp.css -o ./email-template/dist/css/style.prefix.css",
+    "compress:css": "node-sass ./email-template/dist/css/style.prefix.css ./email-template/dist/css/style.css --output-style compressed",
     "build:css": "npm-run-all compile:sass prefix:css compress:css",
-    "inline:css": "juice --css ./backend/email-template/css/style.css ./backend/email-template/index.html ./backend/email-template/dist/inline/index.html"
+
+    "inline:css": "juice --css ./email-template/css/style.css ./email-template/index.html ./email-template/dist/inline/index.html"
   },
   "private": true,
   "dependencies": {
