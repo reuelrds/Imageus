@@ -14,20 +14,20 @@ html {
 
 
   @include respond(tab-land) { // width < 1200?
-    font-size: 56.25%; //1 rem = 9px, 9/16 = 56.25%
+    font-size: 56.25% !important; //1 rem = 9px, 9/16 = 56.25%
   }
   @include respond(tab-port) { // width < 900?
-    font-size: 50%; //1 rem = 8px, 8/16 = 50%
+    font-size: 50% !important; //1 rem = 8px, 8/16 = 50%
   }
   @include respond(big-phone) { // width < 500?
-      font-size: 43.75%; //1 rem = 7px, 7/16 = 43.75%
+      font-size: 43.75% !important; //1 rem = 7px, 7/16 = 43.75%
   }
   @include respond(smaller-phone) { // width < 320?
-      font-size: 37.5%; //1 rem = 6px, 6/16 = 37.5%
+      font-size: 37.5% !important; //1 rem = 6px, 6/16 = 37.5%
   }
 
   @include respond(big-desktop) {
-      font-size: 75%; //1rem = 12, 12/16
+      font-size: 75% !important; //1rem = 12, 12/16
   }
 }
 
@@ -36,11 +36,11 @@ body {
   padding: 3rem;
 
   @include respond(tab-port) {
-      padding: 1rem;
+      padding: 1rem !important;
   }
 
   @include respond(small-phone) {
-    padding: 0;
+    padding: 0 !important;
   }
 }
 
@@ -50,7 +50,7 @@ body {
   grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 16.25rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 
   @include respond(phone){
-    grid-template-columns: [full-start] minmax(1rem,1fr) [center-start]repeat(8, [col-start] minmax(min-content, 8rem) [col-end]) [center-end] minmax(1rem, 1fr) [full-end];
+    grid-template-columns: [full-start] minmax(1rem,1fr) [center-start]repeat(8, [col-start] minmax(min-content, 8rem) [col-end]) [center-end] minmax(1rem, 1fr) [full-end] !important;
   }
 }
 
@@ -61,12 +61,12 @@ body {
   border-radius: 3px;
 
   @include respond(big-phone) {
-    padding: 2rem;
+    padding: 2rem !important;
   }
 
   @include respond(smaller-phone) {
-    padding: 0rem;
-    border-radius: 0;
+    padding: 0rem !important;
+    border-radius: 0 !important;
   }
 
   &-alt {

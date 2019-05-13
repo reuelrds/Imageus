@@ -5,13 +5,13 @@
   align-items: center;
 
   @include respond(big-phone) {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    justify-items: center;
-    align-items: center;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    justify-items: center !important;
+    align-items: center !important;
 
     &__text-box .heading-primary > * {
-      text-align: center;
+      text-align: center !important;
     }
   }
 
