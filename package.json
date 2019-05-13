@@ -17,9 +17,11 @@
     "compile:sass": "node-sass ./email-template/sass/main.scss ./email-template/dist/css/style.comp.css",
     "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' ./email-template/dist/css/style.comp.css -o ./email-template/dist/css/style.prefix.css",
     "compress:css": "node-sass ./email-template/dist/css/style.prefix.css ./email-template/dist/css/style.css --output-style compressed",
-    "build:css": "npm-run-all compile:sass prefix:css compress:css",
+    "cp:template": "cp ./email-template/index.html ./email-template/dist/index.html",
+    "build:template": "npm-run-all compile:sass prefix:css compress:css cp:template",
 
-    "inline:css": "juice --css ./email-template/css/style.css ./email-template/index.html ./email-template/dist/inline/index.html"
+    "inline:css": "juice --css ./email-template/dist/css/style.prefix.css --preserve-important true --remove-style-tags false  ./email-template/index.html ./email-template/dist/inline/index.html",
+    "juice": "juice"
   },
   "private": true,
   "dependencies": {
