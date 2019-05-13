@@ -36,5 +36,5 @@ Start the Flask Server
 
 Start the Angular application in a new Terminal from project root directory
 ```bash
-> npm run start -o
+> npm run start -- -o
 ```
