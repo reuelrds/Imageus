@@ -9,3 +9,4 @@ BLUEPRINT = Blueprint('api', __name__)
 CORS(BLUEPRINT)
 
 from . import photos
+from . import email
