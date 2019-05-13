@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material';
+import { MAT_DIALOG_DATA, MatSnackBar } from '@angular/material';
 import { Image } from '../models/image';
 import { FormControl, Validators } from '@angular/forms';
 import { ImageService } from '../services/image.service';
@@ -16,7 +16,8 @@ export class FavouritesDialogComponent implements OnInit {
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: Image[],
-    private imageService: ImageService
+    private imageService: ImageService,
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit() {
@@ -30,7 +31,11 @@ export class FavouritesDialogComponent implements OnInit {
       const ids = this.selectedImages.map((image: Image) => {
         return image.photo_id;
       });
-      this.imageService.sendEmail(ids);
+      this.imageService.sendEmail(this.email.value, ids).subscribe((message: string) => {
+        this.snackBar.open(message, "Close", {
+          duration: 5000
+        });
+      });
     } else if (this.email.invalid) {
       console.log('Invalid Email');
     } else if (this.selectedImages.length === 0 ) {
