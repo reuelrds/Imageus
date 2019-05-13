@@ -1,27 +1,41 @@
 # Imageus
-#### *(Under Development)*
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
-## Development server
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Imageus is a website which displays photos to the user. The User's can view the Photos and also E-Mail their favourite photos.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This Website was built using Angular for Front-End and Flask as it's Backend. The Sample Database provided uses Unsplash's API to load Photo Details and the E-Mail's are sent using SendGrid
 
-## Code scaffolding
+## To Run this locally
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Clone this Repository
+```bash
+> git clone https://github.com/reuelrds/Imageus
+> cd Imageus
+```
 
-## Build
+Install npm dependencies
+```bash
+> npm install
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Install Flask Dependencies
+```bash
+> cd backend
+> conda env create -f environment.yml
+> source activate flask
+```
+###### *Note: The above commands assume that you use Anaconda as your python distrubution. If you are not using it then you can find the list of dependencies in `requirements.txt` file.*
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Update the .flaskenv file to include your SendGrid API key, Template Id and Sender E-mail Address. Also you can change the Port, Environement and the Database Url
 
-## Running end-to-end tests
+Start the Flask Server
+```bash
+> flask run
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Start the Angular application
+```bash
+> cd ..
+> npm run start -o
+```
