@@ -8,7 +8,7 @@ from flask import Flask
 
 from config import Config
 from .api import BLUEPRINT as api_bp
-from .extensions import DB, MIGRATE
+from .extensions import DB, MIGRATE, MAIL
 
 
 def create_app(config_obj=Config):
@@ -28,6 +28,7 @@ def register_extensiions(app):
   """
   DB.init_app(app)
   MIGRATE.init_app(app)
+  MAIL.init_app(app)
 
 
 def register_blueprints(app):
