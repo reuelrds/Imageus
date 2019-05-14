@@ -3,13 +3,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject, Observable } from 'rxjs';
 import { Image } from '../models/image';
 import { tap, map } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImageService {
 
-
+  BACKEND_URL = environment.apiUrl;
   images: Image[];
 
   constructor(
@@ -17,7 +18,7 @@ export class ImageService {
   ) {}
 
   get_photos() {
-    return this.httpClient.get<Image[]>('http://localhost:3000/api/photos').pipe(
+    return this.httpClient.get<Image[]>(`${this.BACKEND_URL}/api/photos`).pipe(
       map(images => {
         images.forEach(image => image.liked = false);
         return images;
@@ -27,7 +28,7 @@ export class ImageService {
 
   sendEmail(email, selectedImages: string[]) {
     console.log(selectedImages);
-    return this.httpClient.post('http://localhost:3000/api/email', {
+    return this.httpClient.post(`${this.BACKEND_URL}/api/email`, {
       email,
       ids: selectedImages
     });
