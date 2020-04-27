@@ -6,7 +6,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This Website was built using Angular for Front-End and Flask as it's Backend. The Sample Database provided uses [Unsplash](https://unsplash.com)'s API to load Photo Details and the E-Mail's are sent using [SendGrid](https://sendgrid.com)
 
 
-#### *A Live Preview can be found here [Imageus](https://reuelrds.github.io/Imageus).*
+#### ~~*A Live Preview can be found here [Imageus](https://reuelrds.github.io/Imageus).*~~
+
+#### This Branch contains the source code for old project. You may face some errors while building the App.
 
 ## To Run this locally
 
