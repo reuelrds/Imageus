@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './shared/material/material.module';
 import { SearchComponent } from './search/search.component';
 import { ThemePickerModule } from './theme-picker/theme-picker.component';
+import { ImageComponent } from './image/image.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ThemePickerModule } from './theme-picker/theme-picker.component';
     NavbarComponent,
     HeroComponent,
     SearchComponent,
+    ImageComponent,
   ],
   imports: [
     BrowserModule,
