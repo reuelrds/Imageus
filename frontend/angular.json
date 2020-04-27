@@ -28,6 +28,8 @@
               "src/assets"
             ],
             "styles": [
+              "src/app/shared/styles/base/imageus-theme.scss",
+              "src/assets/icofont/icofont.min.css",
               "src/styles.scss"
             ],
             "scripts": []
