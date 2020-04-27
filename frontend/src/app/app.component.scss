@@ -1,0 +1,22 @@
+
+.navbar {
+  grid-column: col-start 2 / col-end 7;
+}
+
+
+.hero-component {
+  grid-column: full-start / full-end;
+}
+
+
+.hero-box {
+  grid-column: full-start / full-end;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .5)), url('/assets/ruud-luijten-national-park.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.image_container {
+  grid-column: center-start / center-end;
+  margin: 10rem 0;
+}
