@@ -8,7 +8,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 #### ~~*A Live Preview can be found here [Imageus](https://reuelrds.github.io/Imageus).*~~
 
-### This Branch contains the source code for old project. You may face some errors while building the App.
+### *This Branch contains the source code for old project. You may face some errors while building the App.*
 
 ## To Run this locally
 
