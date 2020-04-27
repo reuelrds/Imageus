@@ -1,0 +1,23 @@
+<div class="box-container" #imageContainer>
+  <div class="box-gutter"></div>
+
+  <div class="box box-{{ i+1 }}" [attr.data-idx]="i" *ngFor="let image of images; index as i" #ele>
+    <img class="box__image" [src]="image.regular" (click)="showImage(ele)">
+    <div class="box__author">
+      <div class="box__author--image">
+        <img [src]="image.profile_image" alt="">
+      </div>
+      <div class="box__author--details">
+        <div class="box__author--name">
+          {{ image.name }}
+        </div>
+        <div class="box__author--username">
+          <a [href]="image.link">@{{ image.username }}</a>
+        </div>
+      </div>
+    </div>
+    <div class="box__likes" (click)="onLike(i)">
+      <i class="icofont-heart-alt"  [ngClass]="image.liked ? 'box__likes--icon-liked': 'box__likes--icon'"></i>
+    </div>
+  </div>
+</div>
