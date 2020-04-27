@@ -1,0 +1,18 @@
+<mat-toolbar class="navbar">
+  <div class="navbar__icon">
+    <img src="assets/logo-black.png" alt="Imageus Logo">
+  </div>
+  <div class="navbar__actions">
+    <div class="content">
+      <imageus-search></imageus-search>
+    </div>
+    <div class="navbar__actions--toggle-theme">
+        <imageus-theme-picker></imageus-theme-picker>
+    </div>
+    <div class="navbar__actions--cart" (click)="openFavouritesDialog()">
+      <button mat-icon-button matTooltip="View Favourite Images">
+        <mat-icon [matBadge]="favImagesCount"  [matBadgeHidden]="isFavImagesCountZero" matBadgeColor="accent" fontSet="icofont" fontIcon="icofont-bucket" class="navbar__actions--cart-icon"></mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-toolbar>
