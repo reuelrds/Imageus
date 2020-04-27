@@ -1,0 +1,33 @@
+<div class="hero">
+
+  <div class="hero__titlebox">
+    <div class="hero__titlebox--title">
+      <h1 class="heading__primary">
+          <span class="heading__primary--main">
+              Imageus
+          </span>
+          <span class="heading__primary--sub">
+              A Collection of Beautiful Landscape & Nature Images
+          </span>
+        </h1>
+    </div>
+    <div class="hero__searchbox">
+      <mat-form-field appearance="standard" floatLabel="never" class="hero__searchbox--input">
+        <mat-icon matPrefix fontSet="icofont" fontIcon="icofont-search" class="hero__searchbox--input-icon"></mat-icon>
+        <input matInput type="text" name="searchbox" placeholder="Search Landscapes or Nature" [formControl]="searchBox" (keyup)="searchPhotos()">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="background__copyright">
+    <span>Photo by
+      <a href="https://unsplash.com/photos/zFvZ1r7YjGc?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+        Ruud Luijten
+      </a> on
+      <a href="https://unsplash.com">
+        Unsplash
+      </a>
+    </span>
+  </div>
+
+</div>

@@ -1,0 +1,73 @@
+.hero {
+  height: 60vh;
+  position: relative;
+
+  &__titlebox {
+    position: absolute;
+    top: 25%;
+    left: 20%;
+    transform: translate( -20%, -25%);
+  }
+
+  &__searchbox {
+    width: 150%;
+    background-color: white;
+    padding: 0 1.5rem;
+    border-radius: 5px;
+
+    &--input {
+      display: inline-block;
+      width: 100%;
+
+      &-icon {
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
+
+.heading__primary {
+  backface-visibility: hidden;
+  margin: 6rem 0 3rem 0;
+  color: white;
+  font-family: "Lato", sans-serif;
+
+  &--main {
+    text-transform: uppercase;
+    display: block;
+    font-size: 6rem;
+    font-weight: 300;
+    // letter-spacing: .5rem;
+  }
+
+  &--sub {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 300;
+  }
+}
+
+
+.background__copyright {
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 3rem;
+
+  & span {
+    color: white;
+
+    & a {
+    color: #ccc;
+    transition: color .2s ease-in-out,opacity .2s ease-in-out;
+    -webkit-text-decoration-skip: ink;
+    text-decoration-skip-ink: auto;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
