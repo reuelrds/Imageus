@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { state, style, trigger, transition, animate } from '@angular/animations';
 import { FormControl } from '@angular/forms';
-// import { SearchService } from '../services/search.service';
+
+import { SearchService } from '../services/search.service';
 
 @Component({
   selector: 'imageus-search',
@@ -30,7 +31,7 @@ export class SearchComponent implements OnInit {
   isSearchBoxIconVisible = true;
 
   constructor(
-    // private searchService: SearchService
+    private searchService: SearchService
   ) { }
 
   ngOnInit() {
@@ -38,7 +39,7 @@ export class SearchComponent implements OnInit {
   }
 
   searchPhoto() {
-    // this.searchService.sendQuery(this.searchBox.value);
+    this.searchService.sendQuery(this.searchBox.value);
   }
 
   showSearchBox() {

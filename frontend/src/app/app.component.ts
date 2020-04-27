@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Image } from './shared/models/image';
 import { ImageService } from './services/image.service';
+import { SearchService } from './services/search.service';
 
 @Component({
   selector: 'imageus-root',
@@ -16,7 +17,8 @@ export class AppComponent implements OnInit{
   filteredImages: Image[];
 
   constructor(
-    private imageService: ImageService
+    private imageService: ImageService,
+    private searchService: SearchService
   ) {}
 
   ngOnInit() {
@@ -24,9 +26,27 @@ export class AppComponent implements OnInit{
       this.images = res;
       this.filteredImages = res;
     });
+
+    this.searchService.searchQuery$.subscribe(query => {
+      this.searchQuery(query);
+    });
   }
 
-  searchQuery($event) {}
+  searchQuery(query) {
+    console.log(query);
+    this.filteredImages = this.images.filter(image => {
+      const str = String.prototype.concat(
+        image.description,
+        image.alt_description,
+        image.tags,
+        image.username,
+        image.name
+      );
+      return str.includes(query);
+    });
+    console.log(this.filteredImages);
+    console.log(this.filteredImages.length);
+  }
 
   liked(likedImage) {
     const result = this.likedImages.some(image => image.photo_id === likedImage.photo_id);
