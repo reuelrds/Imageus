@@ -32,7 +32,10 @@
               "src/assets/icofont/icofont.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/imagesloaded/imagesloaded.pkgd.min.js",
+              "./node_modules/packery/dist/packery.pkgd.min.js"
+            ]
           },
           "configurations": {
             "production": {
