@@ -15,6 +15,8 @@ import * as Packery from 'packery';
 import * as imagesLoaded from 'imagesloaded';
 
 import { Image } from './../shared/models/image';
+import { ImageDetailsComponent } from './image-details/image-details.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'imageus-image',
@@ -44,7 +46,9 @@ export class ImageComponent implements OnInit, AfterViewInit {
     originLeft: true
   };
 
-  constructor() {}
+  constructor(
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {}
 
@@ -60,7 +64,15 @@ export class ImageComponent implements OnInit, AfterViewInit {
     });
   }
 
-  showImage($e) {}
+  showImage(event) {
+    const idx = event.getAttribute('data-idx');
+    this.dialog.open(ImageDetailsComponent, {
+      width: '80vw',
+      height: '90vh',
+      data: this.images[idx],
+      autoFocus: false
+    });
+  }
 
   onLike(index) {
     this.images[index].liked = !this.images[index].liked;

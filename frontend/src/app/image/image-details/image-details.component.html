@@ -1,0 +1,30 @@
+<div class="image-details">
+  <div class="image-details__author">
+    <div class="image-details__author--image">
+      <img [src]="data.profile_image" alt="">
+    </div>
+    <div class="image-details__author--details">
+      <div class="image-details__author--name">
+        {{ data.name }}
+      </div>
+      <div class="image-details__author--username">
+        <a [href]="data.link">@{{ data.username }}</a>
+      </div>
+    </div>
+
+    <button mat-icon-button mat-dialog-close class="close">
+      <mat-icon fontSet="icofont" fontIcon="icofont-close-line"></mat-icon>
+    </button>
+  </div>
+
+  <div class="image-container">
+    <figure class="image-box">
+      <img [src]="data.regular" alt="" class="image-box__image">
+      <!-- dswwd -->
+      <figcaption class="image-box__caption">
+        <p class="image-box__caption--desc" *ngIf="data.description !== 'None'">{{ data.description }}</p>
+        <p class="image-box__caption--alt" *ngIf="data.alt_description !== 'None'">{{ data.alt_description }}</p>
+      </figcaption>
+    </figure>
+  </div>
+</div>

@@ -13,6 +13,7 @@ import { MaterialModule } from './shared/material/material.module';
 import { SearchComponent } from './search/search.component';
 import { ThemePickerModule } from './theme-picker/theme-picker.component';
 import { ImageComponent } from './image/image.component';
+import { ImageDetailsComponent } from './image/image-details/image-details.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ImageComponent } from './image/image.component';
     HeroComponent,
     SearchComponent,
     ImageComponent,
+    ImageDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +33,9 @@ import { ImageComponent } from './image/image.component';
     ThemePickerModule
   ],
   providers: [],
+  entryComponents: [
+    ImageDetailsComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
