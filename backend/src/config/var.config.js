@@ -1,14 +1,16 @@
 // Configuration File: It Contains values for various variables
-const yargs = require('yargs');
+const dotenv = require("dotenv");
 
-const env = yargs.argv.env ?  yargs.argv.env : yargs.argv._[0];
+dotenv.config();
 
 const config = {
-    env,
-    PORT: process.env.PORT || "3001",
-    mongodb: {
-      url: 'mongodb://127.0.0.1:27017/Imageus'
-    },
+  PORT: process.env.PORT || "3000",
+  mongodb: {
+    url: `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB}`,
+  },
+  SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
+  SENDGRID_EMAIL_ID: process.env.SENDGRID_EMAIL_ID,
+  SENDGRID_TEMPLATE_ID: process.env.SENDGRID_TEMPLATE_ID
 };
 
 module.exports = config;
