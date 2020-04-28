@@ -1,0 +1,10 @@
+{
+  "name": "imageus_api",
+  "version": "1.0.0",
+  "description": "A REST API for Imageus website",
+  "main": "server.js",
+  "scripts": {
+  },
+  "author": "Reuel D'silva",
+  "license": "MIT"
+}
