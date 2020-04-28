@@ -6,9 +6,9 @@ const User = require("./../models/User.model");
 
 exports.getImages = async (req, res, next) => {
   try {
-    const imageData = await Image.find();
-    const urlData = await Url.find();
-    const userData = await User.find();
+    const imageData = await Image.find().sort("photo_id");
+    const urlData = await Url.find().sort("photo_id");
+    const userData = await User.find().sort("photo_id");
 
     const data = _.zipWith(imageData, urlData, userData, (image, url, user) => {
       return {
