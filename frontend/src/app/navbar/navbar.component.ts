@@ -2,6 +2,7 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 import { Image } from './../shared/models/image';
+import { DialogComponent } from '../favourites/dialog/dialog.component';
 
 @Component({
   selector: 'imageus-navbar',
@@ -28,11 +29,11 @@ export class NavbarComponent implements OnInit, OnChanges {
   }
 
   openFavouritesDialog() {
-    // this.dialog.open(FavouritesDialogComponent, {
-      // width: '80vw',
-      // height: '80vh',
-      // data: this.favImages,
-      // autoFocus: false
-    // });
+    this.dialog.open(DialogComponent, {
+      width: '80vw',
+      height: '80vh',
+      data: this.favImages,
+      autoFocus: false
+    });
   }
 }

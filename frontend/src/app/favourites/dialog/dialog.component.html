@@ -1,0 +1,22 @@
+<div class="favourites">
+  <mat-toolbar class="favourites__title">
+    <div class="favourites__title--text">Favourite Images</div>
+    <button mat-icon-button mat-dialog-close class="favourites__title--close">
+      <mat-icon class="favourites__title--close-icon" fontSet="icofont" fontIcon="icofont-close-line"></mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-dialog-content class="favourites__table">
+    <imageus-table [favouriteImages]="data" (selectedImages)="setSelectedImages($event)"></imageus-table>
+  </mat-dialog-content>
+  <mat-dialog-actions class="favourites__actions">
+    <mat-form-field class="favourites__actions--wrapper">
+      <mat-icon matPrefix class="favourites__actions--icon">email</mat-icon>
+      <input matInput type="text" [formControl]="email" #inpem name="email" placeholder="E-mail Address" class="favourites__actions--email">
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      <mat-hint>Send an E-mail containing your Favourite Images</mat-hint>
+    </mat-form-field>
+    <button mat-icon-button class="favourites__actions--send" form=inpem (click)="sendEmail()">
+        <mat-icon class="favourites__actions--send-icon">send</mat-icon>
+    </button>
+  </mat-dialog-actions>
+</div>

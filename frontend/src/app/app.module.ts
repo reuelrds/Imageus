@@ -14,6 +14,8 @@ import { SearchComponent } from './search/search.component';
 import { ThemePickerModule } from './theme-picker/theme-picker.component';
 import { ImageComponent } from './image/image.component';
 import { ImageDetailsComponent } from './image/image-details/image-details.component';
+import { DialogComponent } from './favourites/dialog/dialog.component';
+import { TableComponent } from './favourites/table/table.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { ImageDetailsComponent } from './image/image-details/image-details.compo
     SearchComponent,
     ImageComponent,
     ImageDetailsComponent,
+    DialogComponent,
+    TableComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,8 @@ import { ImageDetailsComponent } from './image/image-details/image-details.compo
   ],
   providers: [],
   entryComponents: [
-    ImageDetailsComponent
+    ImageDetailsComponent,
+    DialogComponent
   ],
   bootstrap: [AppComponent]
 })
