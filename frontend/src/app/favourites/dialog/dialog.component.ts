@@ -33,8 +33,8 @@ export class DialogComponent implements OnInit {
       const ids = this.selectedImages.map((image: Image) => {
         return image.photo_id;
       });
-      this.imageService.sendEmail(this.email.value, ids).subscribe((message: string) => {
-        this.snackBar.open(message, 'Close', {
+      this.imageService.sendEmail(this.email.value, ids).subscribe((message: {[key: string]: string}) => {
+        this.snackBar.open(message.message, 'Close', {
           duration: 5000
         });
       });
