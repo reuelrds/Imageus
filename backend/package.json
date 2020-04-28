@@ -4,7 +4,7 @@
   "description": "A REST API for Imageus website",
   "main": "server.js",
   "scripts": {
-    "start:server": "nodemon ./backend/src/bin/server.js",
+    "start:server": "nodemon ./src/bin/server.js",
     "start:localDB": "mongod --dbpath C:/mongodb/data --directoryperdb"
   },
   "author": "Reuel D'silva",
