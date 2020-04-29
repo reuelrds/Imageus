@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  angular:
+    build: frontend
+    ports: 
+      - "4200:4200"
+    depends_on:
+      - "express"
+  
+  express:
+    build: backend
+    ports: 
+      - "3000:${PORT}"
+    environment: 
+      # Server Variables
+      - PORT=${PORT}
+
+      # MongoDB Variables
+      - DB=${DB}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+
+      # Sendgrid Variables
+      - SENDGRID_EMAIL_ID=${SENDGRID_EMAIL_ID}
+      - SENDGRID_API_KEY=${SENDGRID_API_KEY}
+      - SENDGRID_TEMPLATE_ID=${SENDGRID_TEMPLATE_ID}
+    depends_on:
+      - "db"
+    # command: ["./wait-for-it.sh", "db:5432", "--", "python", "app.py
+
+  db:
+    build: database
+    ports: 
+      - "27018:27017"
+    environment: 
+      # Mongo Env Variables
+      - MONGO_INITDB_DATABASE=${DB}
+      - MONGO_INITDB_ROOT_USERNAME=${DB_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${DB_PASSWORD}
