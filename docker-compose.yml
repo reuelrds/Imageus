@@ -5,13 +5,16 @@ services:
     build: frontend
     ports: 
       - "4200:4200"
+    environment: 
+      - HOST=${HOST}
+      - PORT=${PORT}
     depends_on:
       - "express"
   
   express:
     build: backend
     ports: 
-      - "3000:${PORT}"
+      - "${PORT}:${PORT}"
     environment: 
       # Server Variables
       - PORT=${PORT}
