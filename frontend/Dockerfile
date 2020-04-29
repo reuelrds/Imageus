@@ -1,4 +1,4 @@
-# Create image based on the official Node 10 image from dockerhub
+# Create image based on the official Node 12 image from dockerhub
 FROM node:erbium
 
 # Create a directory where our app will be placed
