@@ -16,11 +16,6 @@ COPY ./seed_db.sh /docker-entrypoint-initdb.d
 # Make the Seed Script Executable
 RUN chmod +x /docker-entrypoint-initdb.d/seed_db.sh
 
-# Mongo Env Variables
-ENV MONGO_INITDB_DATABASE Imageus
-ENV MONGO_INITDB_ROOT_USERNAME reuelrds
-ENV MONGO_INITDB_ROOT_PASSWORD imageus_devops
-
 # Expose Port
 EXPOSE 27017
 
