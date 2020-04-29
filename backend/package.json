@@ -4,6 +4,7 @@
   "description": "A REST API for Imageus website",
   "main": "server.js",
   "scripts": {
+    "start": "node ./src/bin/server.js",
     "start:server": "nodemon ./src/bin/server.js",
     "start:localDB": "mongod --dbpath C:/mongodb/data --directoryperdb"
   },
