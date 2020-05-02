@@ -11,6 +11,12 @@ exports.sendEmail = async (req, res, next) => {
   email = req.body.email;
   ids = req.body.ids;
 
+  if (config.USE_SENDGRID  === "false") {
+    return res.status(200).send({
+      message: "Couldn't send the E-Mail. SendGrid API Key not available"
+    });
+  }
+
   try {
     let imageData = await Image.find(
       { photo_id: { $in: ids } },
@@ -52,12 +58,13 @@ exports.sendEmail = async (req, res, next) => {
     sgMail.send(msg);
 
     res.status(200).json({
-      message: "E-mail Sent"
+      message: "E-mail Sent",
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error,
     });
 
-  } catch (error) {
-  
-    res.send(error);
     console.log(error);
   }
 };

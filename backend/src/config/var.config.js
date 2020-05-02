@@ -8,6 +8,7 @@ const config = {
   mongodb: {
     url: `mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB}?authSource=admin`,
   },
+  USE_SENDGRID: process.env.USE_SENDGRID,
   SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
   SENDGRID_EMAIL_ID: process.env.SENDGRID_EMAIL_ID,
   SENDGRID_TEMPLATE_ID: process.env.SENDGRID_TEMPLATE_ID,
